@@ -2,66 +2,77 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  border: 5px solid orange;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5e4ac;
-  flex: 100%;
-}
-
 .App {
-  border: 3px solid black;
-  width: 600px;
-}
-
-.App label {
-  border: 2px solid green;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-label #new-task {
-  flex: 80%;
-}
-
-label button {
-  flex: 20%;
-}
-
-label ul {
-  flex: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #022e40;
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
-label ul li {
-  border: 2px solid red;
-  list-style: none;
-  flex: 0 1 100%;
-  margin: 10px 20px;
+header {
+  background-color: #d93b3b;
+  font-size: 2rem;
+  width: 75%;
+  margin: 0;
+  padding: 1rem;
+}
+
+.App label,
+.App ul {
+  background-color: #d9cdb8;
+  width: 75%;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  margin: 0;
+  padding: 2rem;
 }
 
-label ul li div {
-  flex: 0 1 80%;
+.App ul {
+  background-color: #f27a5e;
+  flex-flow: column nowrap;
 }
 
-label ul li button {
-  flex: 0 0 20%;
+.App label input {
+  border: none;
+  border-radius: 1rem;
+  flex: 3;
+  padding: 0.5rem;
+}
+
+.App label input:focus {
+  outline: none;
+}
+
+.App label button {
+  background-color: #227373;
+  color: #d9cdb8;
+  border: none;
+  border-radius: 1rem;
+  flex: 1;
+}
+
+.App ul li {
+  background-color: #227373;
+  color: #d9cdb8;
+  border-radius: 1rem;
+  list-style: none;
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.task-content {
+  flex: 3;
+  padding-right: 1rem;
+}
+
+.App ul li button {
+  background-color: #d93b3b;
+  color: #d9cdb8;
+  border: none;
+  border-radius: 1rem;
+  flex: 1;
 }

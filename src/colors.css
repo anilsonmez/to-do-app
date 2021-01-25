@@ -1,0 +1,50 @@
+/* Color Theme Swatches in Hex */
+.Sunrise-1-hex {
+  color: #022e40;
+}
+.Sunrise-2-hex {
+  color: #227373;
+}
+.Sunrise-3-hex {
+  color: #d9cdb8;
+}
+.Sunrise-4-hex {
+  color: #f27a5e;
+}
+.Sunrise-5-hex {
+  color: #d93b3b;
+}
+
+/* Color Theme Swatches in RGBA */
+.Sunrise-1-rgba {
+  color: rgba(2, 46, 64, 1);
+}
+.Sunrise-2-rgba {
+  color: rgba(34, 115, 115, 1);
+}
+.Sunrise-3-rgba {
+  color: rgba(217, 205, 184, 1);
+}
+.Sunrise-4-rgba {
+  color: rgba(242, 122, 94, 1);
+}
+.Sunrise-5-rgba {
+  color: rgba(217, 59, 59, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Sunrise-1-hsla {
+  color: hsla(197, 93, 12, 1);
+}
+.Sunrise-2-hsla {
+  color: hsla(180, 54, 29, 1);
+}
+.Sunrise-3-hsla {
+  color: hsla(38, 30, 78, 1);
+}
+.Sunrise-4-hsla {
+  color: hsla(11, 85, 65, 1);
+}
+.Sunrise-5-hsla {
+  color: hsla(0, 67, 54, 1);
+}
