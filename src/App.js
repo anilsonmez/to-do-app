@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-function App() {
+let taskCount = 0;
+
+const App = () => {
+  const [newTask, setNewTask] = useState({ id: 0, content: "" });
+  const [taskList, setTaskList] = useState([]);
+  console.log("App Called");
+  console.log(`taskCount outside: ${taskCount}`);
+
+  function handleTaskAddition() {
+    taskCount++;
+    console.log(`taskCount: ${taskCount}`);
+    setNewTask({ ...newTask, id: taskCount });
+    console.log(newTask);
+    setTaskList([...taskList, newTask]);
+    console.log(taskList);
+  }
+
+  function handleTaskDeletion(taskID) {
+    console.log("called");
+    setTaskList(taskList.filter((task) => taskID !== task.id));
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <label htmlFor="new-task">
+        <input
+          id="new-task"
+          value={newTask.content}
+          placeholder="Add a new task"
+          onChange={(e) =>
+            setNewTask({ ...newTask, content: `${e.target.value}` })
+          }
+        />
+        <button onClick={handleTaskAddition}>Add Task</button>
+      </label>
+      <label htmlFor="task-list">
+        <ul>
+          {taskList.map((task) => (
+            <li key={task.id}>
+              <div className="task-content">{task.content}</div>
+              <button onClick={() => handleTaskDeletion(task.id)}>
+                Delete Task
+              </button>
+            </li>
+          ))}
+        </ul>
+      </label>
     </div>
   );
-}
+};
 
 export default App;
