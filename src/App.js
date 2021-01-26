@@ -7,21 +7,15 @@ let taskCount = 0;
 const App = () => {
   const [newTask, setNewTask] = useState("");
   const [taskList, setTaskList] = useState([]);
-  console.log("App Called");
-  console.log(`taskCount outside: ${taskCount}`);
 
   function handleTaskAddition() {
     taskCount++;
-    console.log(`taskCount: ${taskCount}`);
     setNewTask(newTask);
-    console.log(`newTask: ${newTask} id: ${taskCount}`);
     setTaskList([...taskList, { content: newTask, id: taskCount }]);
-    console.log([...taskList, { content: newTask, id: taskCount }]);
     setNewTask("");
   }
 
   function handleTaskDeletion(taskID) {
-    console.log("called");
     setTaskList(taskList.filter((task) => taskID !== task.id));
   }
 
@@ -37,12 +31,14 @@ const App = () => {
             setNewTask(e.target.value);
           }}
           onKeyPress={(e) => {
-            if (e.key === "Enter") {
+            if (e.key === "Enter" && newTask) {
               handleTaskAddition();
             }
           }}
         />
-        <button onClick={handleTaskAddition}>Add Task</button>
+        <button disabled={!newTask} onClick={handleTaskAddition}>
+          Add Task
+        </button>
       </label>
       <ul>
         {taskList.map((task) => (

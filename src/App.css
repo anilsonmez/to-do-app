@@ -54,6 +54,11 @@ header {
   flex: 1;
 }
 
+.App label button:disabled {
+  background-color: #f27a5e;
+  color: #022e40;
+}
+
 .App ul li {
   background-color: #227373;
   color: #d9cdb8;
